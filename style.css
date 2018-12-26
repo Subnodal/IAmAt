@@ -26,7 +26,18 @@ div {
 }
 
 div.footer {
+    margin-right: 5px;
     padding-top: 20px;
     height: 50px;
+    text-align: right;
+    font-size: 20px;
     color: #7e7e7e;
+}
+
+input {
+    font-size: 20px;
+    border: none;
+    background-color: #282828;
+    color: white;
+    outline: none;
 }

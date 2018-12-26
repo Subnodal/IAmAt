@@ -4,15 +4,38 @@
         <title>IAmAt</title>
         <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <script src="sha256.min.js"></script>
         <script src="jquery.min.js"></script>
         <script src="script.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyC-Yjn-rzpqZHbHoQzsgkwDXvBQNQSzs7s",
+                authDomain: "iamat-5f0cd.firebaseapp.com",
+                databaseURL: "https://iamat-5f0cd.firebaseio.com",
+                projectId: "iamat-5f0cd",
+                storageBucket: "iamat-5f0cd.appspot.com",
+                messagingSenderId: "598045401891"
+            };
+
+            firebase.initializeApp(config);
+        </script>
     </head>
     <body>
-        <div>Coming soon! Check back later to see what we've made.</div>
+        <div class="content"></div>
         <div class="footer">
-            Ready to save this?
-            <a href="javascript:save">Save</a>
+            <div class="view">
+                Created at IAmAt
+                <a href="javascript:edit()">Edit</a>
+            </div>
+            <div class="edit">
+                <span class="message">Ready to save this? Enter your password...</span><br>
+                <input type="password" class="savePass" /><br>
+                <a href="javascript:cancel()">Cancel</a>
+                <a href="index.html?page=help" target="_blank">Help</a>
+                <a href="javascript:save()">Save</a>
+            </div>
         </div>
     </body>
 </html>
