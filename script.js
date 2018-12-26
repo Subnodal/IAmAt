@@ -17,7 +17,7 @@ function save() {
 
         try {
             firebase.database().ref("pages/" + getURLParameter("page").replace(/[.$\[\]#/]/g, "")).set({
-                content: $(".content").text(),
+                content: $(".content").html().replace(/<div>/g, "").replace(/<\/div>/g, "<br>").replace(/<br>/g, "\n").replace(/</g, "&lt;").replace(/>/g, "&gt;"),
                 password: sha256.create().update($(".savePass").val()).hex()
             }).then(function() {
                 cancel();
@@ -50,7 +50,7 @@ $(function() {
     }
 
     firebase.database().ref("pages/" + getURLParameter("page").replace(/[.$\[\]#/]/g, "")).once("value", function(snapshot) {
-        $(".content").text(snapshot.val().content);
+        $(".content").html(snapshot.val().content.replace(/<div>/g, "").replace(/<\/div>/g, "<br>").replace(/<br>/g, "\n").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>"));
     });
 
     if (getURLParameter("edit") == "true") {

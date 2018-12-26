@@ -21,6 +21,15 @@ a:hover {
     text-decoration: underline;
 }
 
+a.hidden {
+    color: inherit;
+}
+
+a.hidden:hover {
+    color: white;
+    text-decoration: none;
+}
+
 div {
     outline: none;
 }
